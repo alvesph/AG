@@ -13,7 +13,7 @@ while ($line = fgetcsv($read, 1000, ",")) {
 	}
 	echo "<br>";
 }
-print $line[1];
+
 fclose($read);
  
 

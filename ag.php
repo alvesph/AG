@@ -21,44 +21,39 @@ rodada do algoritmo
 ####################
 */
 
-$mochila = array
+$caracteristicas = array
 	(
-	array("biologia",5,3),
-	array("matemática",2,4),
-	array("português",1,6),
-	array("sociologia",3,2),
-	array("física",4,2)
+	array("olho",1,1),
+	array("cor da pele",1,1),
+	array("orelha",1,1),
+	array("cabelo",1,1),
+	array("nariz",1,1)
 	);
 $população = array();
 
-$peso = 0;
-$qualidade = 0;
+
 $valor = '';
 
 $t = 1;
 while ($t <= 2) {
 $t++;
-	$cromossomo = '';
 
-	foreach ($mochila as $value) {
+	$cromossomo = '';
+	$dominante = 0;
+	$recessiva = 0;
+	foreach ($caracteristicas as $value) {
 
 		$sort = rand(1, 0);
 		if ($sort == 1) {
-			$peso+= $value[2];
-			$qualidade+= $value[1]; 
-		}
-
-		if ($peso < 9 AND $qualidade > 3) {
-			$valor = 'BOM';
-		}else {
-			$valor = 'RUIM';
-		}
-
+			$dominante+= $value[1];
+			 
+		}else{$recessiva+= $value[2];}
+		
 		$cromossomo.= $sort;
 
 	}
 
-array_push($população, $cromossomo, $peso, $qualidade, $valor);
+array_push($população, $cromossomo, $dominante, $recessiva);
 }
 
 print_r($população);
