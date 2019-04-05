@@ -30,7 +30,7 @@ $caracteristicas = array
 	array("nariz",1,1)
 	);
 $população = array();
-
+$pop = array();
 
 $valor = '';
 
@@ -54,9 +54,10 @@ $t++;
 	}
 
 array_push($população, $cromossomo, $dominante, $recessiva);
+array_push($pop, $cromossomo);
 }
 
-print_r($população);
+print_r($pop);
 
 echo "<br>";
 ?>
